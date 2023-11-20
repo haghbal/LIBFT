@@ -1,0 +1,106 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strtest.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/14 20:30:50 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/14 23:00:57 by haghbal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include "libft.h"
+
+int	ft_finalstring(char *str, char const *s1, size_t len, size_t i)
+{
+	size_t	j;
+
+	j = 0;
+	while (i + j < len)
+	{
+		str[j] = s1[j + i];
+		j++;
+	}
+	return (j);
+}
+
+// char *check_error(char const *s1, char const *set)
+// {
+
+// 	char	*str;
+
+// 	if (s1 == NULL || set == NULL)
+// 		return (NULL);
+// 	if (s1[0] == '\0')
+// 	{
+// 		str = malloc(1);
+// 		if (!str)
+// 			return (NULL);
+// 		return (str[0] = '\0', str);
+// 	}
+// }
+
+
+char *ft_my_malloc(size_t i, size_t len)
+{
+	char *str;
+
+	str = malloc((len - i + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	return (str);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	len;
+	size_t	i;
+	char	*str;
+
+	i = 0;;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	if (s1[0] == '\0')
+	{
+		str = malloc(1);
+		if (!str)
+			return (NULL);
+		return (str[0] = '\0', str);
+	}
+	while (s1[i] && (ft_strchr(set, s1[i])) != NULL)
+		i++;
+	len = ft_strlen(s1);
+	while (len > 0 && (ft_strchr(set, s1[len - 1])) != NULL)
+		len--;
+	if (len < i)
+	{
+		str = malloc(1);
+		if (!str)
+			return (NULL);
+		return (str[0] = '\0', str);
+	}
+	str = ft_my_malloc(i, len);
+	return (str[ft_finalstring(str, s1, len, i)] = '\0', str);
+}
+
+int main()
+ {
+    const char *s1 = "";
+    const char *set = "";
+
+    char *trimmed_str = ft_strtrim(s1, set);
+
+    if (trimmed_str) {
+        printf("Chaîne originale : '%s'\n", s1);
+        printf("Chaîne trimmée   : '%s'\n", trimmed_str);
+
+        
+    } else {
+        printf("L'allocation mémoire a échoué.\n");
+    }
+	printf("%s", trimmed_str);
+	free(trimmed_str);
+    return 0;
+ }

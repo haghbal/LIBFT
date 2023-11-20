@@ -1,0 +1,78 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_strtrim.txt                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/14 10:54:14 by haghbal           #+#    #+#              #
+#    Updated: 2023/11/15 17:54:34 by haghbal          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <stdio.h>
+#include "libft.h"
+
+// char	*ft_strtrim(char const *s1, char const *set)
+// {
+// 	size_t	len;
+// 	size_t	i;
+// 	char	*str;
+// 	size_t	j;
+
+// 	i = 0;
+// 	if (s1 == NULL || set == NULL)
+// 		return (NULL);
+// 	if (s1[i] == '\0')
+// 	// {
+// 	// 	str = malloc(1);
+// 	// 	if (!str)
+// 	// 		return (NULL);
+// 	// 	str[0] = '\0';
+// 	// 	return (str);
+// 	// }
+// 	while (s1[i] && (ft_strchr(set, s1[i])) != NULL)
+// 		i++;
+// 	len = ft_strlen(s1);
+// 	while (len > 0 && (ft_strchr(set, s1[len - 1])) != NULL)
+// 		len--;
+// 	if (len < i)
+// 	// {
+// 	// 	str = malloc(1);
+// 	// 	if (!str)
+// 	// 		return (NULL);
+// 	// 	str[0] = '\0';
+// 	// 	return (str);
+// 	// }
+// 	str = malloc((len - i + 1) * sizeof(char));
+// 	if (!str)
+// 		return (0);
+// 	j = 0;
+// 	while (i + j < len)
+// 	{
+// 		str[j] = s1[j + i];
+// 		j++;
+// 	}
+// 	str[j] = '\0';
+// 	return (str);
+// }
+
+// // int main()
+// //  {
+// //     const char *s1 = "    \t\t   \n\n\n";
+// //     const char *set = " \t\n";
+
+// //     char *trimmed_str = ft_strtrim(s1, set);
+
+// //     if (trimmed_str) {
+// //         printf("Chaîne originale : '%s'\n", s1);
+// //         printf("Chaîne trimmée   : '%s'\n", trimmed_str);
+
+        
+// //     } else {
+// //         printf("L'allocation mémoire a échoué.\n");
+// //     }
+// // 	printf("%s", trimmed_str);
+// // 	free(trimmed_str);
+// //     return 0;
+// //  }
