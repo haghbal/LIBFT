@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 23:10:46 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/21 21:40:57 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/19 22:36:23 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/21 20:02:04 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (lst && lst->next != NULL)
-	{
-		lst = lst->next;
-	}
-	return (lst);
+	new->next = *lst;
+	*lst = new;
 }

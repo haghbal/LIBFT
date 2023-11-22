@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:41:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/20 00:33:57 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/21 21:41:51 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(r * s));
 }
-int main()
-{
-printf("%d\n", atoi("-2147483648"));
-printf("%d", ft_atoi("-2147483648"));
-}
+// int main()
+// {
+// printf("%d\n", atoi("-2147483648"));
+// printf("%d", ft_atoi("-2147483648"));
+// }

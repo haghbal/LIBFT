@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:05:11 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/18 23:11:31 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/21 21:42:00 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-int main()
-{
-    int i;
-    char s[10] = "abcdefgh";
-    char d[10];
-    ft_memcpy(d, s, 5);
-    for (i=0; i<10; i++)
-    {
-        printf("%c", d[i]);
-    }
-}
+// int main()
+// {
+//     int i;
+//     char s[10] = "abcdefgh";
+//     char d[10];
+//     ft_memcpy(d, s, 5);
+//     for (i=0; i<10; i++)
+//     {
+//         printf("%c", d[i]);
+//     }
+// }

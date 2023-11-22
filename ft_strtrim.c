@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:48:09 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/15 16:26:26 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/22 16:42:50 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	else
 		str = get_str(s1, set);
 	return (str);
+}
+
+int main()
+{
+	char const *s1 = "*#**# aghbal hamza #*##";
+	char const *set = "*#";
+	printf("%s", ft_strtrim(s1, set));
 }

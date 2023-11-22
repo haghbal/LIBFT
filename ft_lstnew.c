@@ -6,10 +6,12 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:48:38 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/19 19:55:52 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/21 20:02:44 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "libft.h"
 
 t_list  *ft_lstnew(void *content)
 {
