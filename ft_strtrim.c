@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:48:09 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/22 16:42:50 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/23 21:34:19 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ static size_t	get_end(char const *s1, char const *set)
 	size_t	i;
 
 	i = 0;
-	if (ft_strlen(s1))
-		i = ft_strlen(s1) - 1;
+	i = ft_strlen(s1) - 1;
 	while (i > 0 && ft_strchr(set, s1[i]))
 		i--;
 	return (i);
@@ -36,18 +35,20 @@ static size_t	get_end(char const *s1, char const *set)
 
 static char	*get_str(const char *s1, const char *set)
 {
-	size_t	len;
+	size_t	end;
+	size_t	start;
 	char	*str;
 	size_t	i;
 
-	len = get_end(s1, set) + 1;
-	str = (char *)malloc((len - get_start(s1, set) + 1) * sizeof(char));
+	end = get_end(s1, set) + 1;
+	start = get_start(s1, set);
+	str = (char *)malloc((end - start + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (get_start(s1, set) + i < len)
+	while (start + i < end)
 	{
-		str[i] = s1[get_start(s1, set) + i];
+		str[i] = s1[start + i];
 		i++;
 	}
 	str[i] = '\0';
@@ -57,22 +58,27 @@ static char	*get_str(const char *s1, const char *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
+	size_t	start;
+	size_t	end;
 
-	if (get_start(s1, set) > get_end(s1, set) || *s1 == '\0')
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	if (*set == '\0' || *s1 == '\0')
+		return (ft_strdup(s1));
+	start = get_start(s1, set);
+	end = get_end(s1, set);
+	if (start > end)
 	{
-		str = (char *)malloc(1 * sizeof(char));
-		if (!str)
-			return (NULL);
-		*str = '\0';
+		return (ft_strdup(""));
 	}
 	else
 		str = get_str(s1, set);
 	return (str);
 }
 
-int main()
-{
-	char const *s1 = "*#**# aghbal hamza #*##";
-	char const *set = "*#";
-	printf("%s", ft_strtrim(s1, set));
-}
+// int main()
+// {
+// 	char const *s1 = "*###bhdhsethfdhsfh*###";
+// 	char const *set = "*#";
+// 	printf("%s\n", ft_strtrim(s1, set));
+// }

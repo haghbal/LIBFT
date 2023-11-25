@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/18 23:52:45 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/23 21:28:39 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,13 @@ static void	ft_saisi(char *soutab, const char *s, char c)
 
 void	free_tab(char **tab, size_t index)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < index)
+	while (index >= 0)
 	{
-		free(tab[i]);
-		i++;
+		free(tab[index]);
+		index--;
 	}
-	if (i == 0)
-		free(tab);
+	free(tab);
+	return ;
 }
 
 static void	aloc_soutab(char **tab, char const *s, char c)
@@ -73,10 +70,7 @@ static void	aloc_soutab(char **tab, char const *s, char c)
 		{
 			tab[i] = malloc((count + 1) * sizeof(char));
 			if (!tab[i])
-			{
 				free_tab(tab, i);
-				return ;
-			}
 			ft_saisi(tab[i], (s + j), c);
 			i++;
 			j = j + count;
@@ -92,6 +86,8 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 	char	**tab;
 
+	if (s == NULL)
+		return (NULL);
 	words = count_words(s, c);
 	tab = malloc((words + 1) * sizeof(char *));
 	if (!tab)

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 00:07:24 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/23 00:36:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/23 23:59:17 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/25 23:06:25 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i])
+	while (lst != NULL)
 	{
-		(*f)(i, &s[i]);
-		i++;
+		if (f != NULL)
+			(*f)(lst->content);
+		lst = lst->next;
 	}
 }

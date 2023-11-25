@@ -6,17 +6,16 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:46:40 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/21 20:03:23 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/23 21:37:02 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	
+
 	i = 0;
 	while (lst)
 	{

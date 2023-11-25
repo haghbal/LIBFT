@@ -1,0 +1,21 @@
+NAME = libft.h
+CFLAGS = -Wall -Wextra -Werror
+
+$(NAME): $(%.o)
+	ar rc $@ $^
+
+bonus: $(%.o)
+	ar rc $@ $^
+
+$(%.o): $(%.c)
+	gcc $(FLAGS) -c $< -o $@
+
+all: $(NAME)
+
+clean:
+	rm -r $(%.o)
+
+fclean: clean
+	rm -r $(NAME)
+
+re: fclean all

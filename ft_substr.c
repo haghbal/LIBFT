@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:21:24 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/22 00:51:56 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/23 21:33:47 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub;
+	char	*sub;
 	size_t	i;
 	size_t	lenn;
 

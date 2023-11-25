@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:01:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/07 13:58:35 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/25 16:20:49 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_bzero(void *s, size_t n)
 // int main()
 // {
 //     char k[10];
-//     ft_bzero(k, 4);
+//     ft_bzero(k, 2);
 //     for (int i = 0; i < 10; i++)
 //     {
 //     printf("%c", k[i]);

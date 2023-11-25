@@ -6,19 +6,28 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:41:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/21 21:41:51 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/23 22:34:35 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+static int	check_nbr(unsigned long r, int s)
+{
+	if (r > 9223372036854775807 && s == 1)
+		return (-1);
+	if (r > 9223372036854775807 && s == -1)
+		return (0);
+	return ((int)(r * s));
+}
+
 int	ft_atoi(const char *str)
 {
-	int		i;
+	int				i;
 	unsigned long	r;
-	int		s;
-	char	*str2;
+	int				s;
+	char			*str2;
 
 	i = 0;
 	r = 0;
@@ -35,16 +44,13 @@ int	ft_atoi(const char *str)
 	while (str2[i] >= '0' && str2[i] <= '9')
 	{
 		r = r * 10 + (str2[i] - 48);
-		if (r > 9223372036854775807 && s == 1)
-			return (-1);
-		if (r > 9223372036854775807 && s == -1 )
-			return (0);
 		i++;
 	}
-	return ((int)(r * s));
+	return (check_nbr(r, s));
 }
+
 // int main()
 // {
-// printf("%d\n", atoi("-2147483648"));
-// printf("%d", ft_atoi("-2147483648"));
+// printf("%d\n", atoi("-9223372036854775809"));
+// printf("%d", ft_atoi("-9223372036854775809"));
 // }

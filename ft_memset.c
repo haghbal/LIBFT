@@ -6,22 +6,23 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 20:04:41 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/08 23:30:42 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/25 22:59:18 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int				i;
-	unsigned char	*a;
-	unsigned char	k;
+	size_t	i;
+	char	*a;
+	char	k;
 
 	i = 0;
-	k = (unsigned char)c;
-	a = (unsigned char *)b;
-	while (i < (int)len)
+	k = (char)c;
+	a = (char *)b;
+	while (i < len)
 	{
 		a[i] = k;
 		i++;
@@ -31,8 +32,10 @@ void	*ft_memset(void *b, int c, size_t len)
 // int main()
 // {
 //     char s[10];
-//     char *m = ft_memset(s, 'd', 5);
-//     char *f = memset(s, 'd', 5);
-//     printf("%s\n", m);
-//     printf("%s\n",f);
+// 	int x;
+//     ft_memset(&x, 5, 2);
+// 	ft_memset(&x, 57, 1);
+//     printf("%d\n", x);
+//     // printf("%s\n",f);
+// 	  // char *f = memset(s, 'd', 5);
 // }

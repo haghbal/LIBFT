@@ -6,7 +6,7 @@
 #    By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 10:38:58 by ggane             #+#    #+#              #
-#    Updated: 2023/11/07 13:54:18 by haghbal          ###   ########.fr        #
+#    Updated: 2023/11/25 17:12:35 by haghbal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 
+bonus: $(OBJ)
+		ar rcs $(NAME) $^
+
 %.o: %.c
 		$(CC) -I. -o $@ -c $? $(CFLAGS)
-
 all: $(NAME)
 
 clean:

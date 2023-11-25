@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 00:07:24 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/23 00:36:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/23 22:40:50 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/24 00:34:51 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*actul_nd;
+	t_list	*next;
 
-	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i])
+	if (lst)
 	{
-		(*f)(i, &s[i]);
-		i++;
+		actul_nd = *lst;
+		while (actul_nd != NULL)
+		{
+			next = actul_nd->next;
+			if (del != NULL)
+				del(actul_nd->content);
+			free(actul_nd);
+			actul_nd = next;
+		}
+		*lst = NULL;
 	}
 }
