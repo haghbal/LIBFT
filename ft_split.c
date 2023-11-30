@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/23 21:28:39 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/30 23:30:07 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ char	**ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char const *s = "DbonjourDlesDamisD";
-// 	char c = 'D';
+// 	char const *s = "hello!";
+// 	char c = ' ';
 // 	char **ss = ft_split(s, c);
 // 	int i = 0;
 // 	while (ss[i])

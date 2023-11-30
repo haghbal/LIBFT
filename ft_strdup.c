@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 22:23:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/14 15:35:34 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/30 16:51:18 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 
 	str = (char *)s1;
 	len = ft_strlen(str);
-	mem = malloc(len + 1);
+	mem = (char *)malloc((len + 1) * sizeof(char));
 	if (!mem)
 		return (NULL);
 	cpy = ft_strlcpy(mem, str, len + 1);

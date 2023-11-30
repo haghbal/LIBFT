@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 23:59:17 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 15:35:03 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/19 22:36:23 by haghbal           #+#    #+#             */
+/*   Updated: 2023/12/01 00:50:03 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (lst != 0)
-	{
-		if (f != NULL)
-			(*f)(lst->content);
-		lst = lst->next;
-	}
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 
-// void f(void *c)
-// {
-// 	char *s;
-// 	s=(char *)c;
-// 	s[0]-=32;
-// }
-// int main()
-// {
-// 	t_list *n1;
-// 	char *s1;
-// 	s1=malloc(10);
-// 	strcpy(s1,"hossam");
-// 	n1 = ft_lstnew(s1);
-// 	ft_lstiter(n1,f);
-// 	printf("%s",n1->content);
-// }
+int main()
+{
+	t_list	*node;
+	t_list	**head;
+	t_list	*new = ft_lstnew("test1");
+	head = &node;
+	node = ft_lstnew("test");
+	ft_lstadd_front(head, new); 
+	while (head)
+	{
+		printf("%s", head->content);
+		head = head->next;
+	}
+}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 00:12:51 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/27 00:23:35 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 00:14:19 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*obj;
 
-	obj = (t_list *)malloc(sizeof(t_list));
+	obj = malloc(sizeof(t_list));
 	if (obj == NULL)
 		return (NULL);
-	if (content != NULL)
-	{
-		obj->content = content;
-		obj->next = 0;
-	}
-	else
-	{
-		obj->content = content;
-		obj->next = NULL;
-	}
+	obj->content = content;
+	obj->next = 0;
 	return (obj);
 }
+
+// int main()
+// {
+// 	t_list	*node;
+
+// 	node = ft_lstnew("test");
+
+// 	printf("%s", node->content);
+// }
