@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 23:38:26 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/27 00:27:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/19 22:36:23 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/23 21:41:02 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-	{
-		return (1);
-	}
-	return (0);
+	new->next = *lst;
+	*lst = new;
 }
-
-/*
-int main()
-{
-    printf("%d", ft_isalpha('0'));
-}
-*/

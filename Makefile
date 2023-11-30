@@ -1,42 +1,39 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/04/07 10:38:58 by ggane             #+#    #+#              #
-#    Updated: 2023/11/25 17:12:35 by haghbal          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+		ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
+		ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
+		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
+		ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
+		ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
+		ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
+		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-NAME=libft.a
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-RM=rm -f
-LDFLAGS=-L.
-LDLIBS=-lft
-SRC = $(wildcard *.c)
-OBJ = $(SRC:.c=.o)
-INC = ./inc/
+SRCBONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bomus.c ft_lstclear_bonus.c \
+ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
+ft_lstnew_bonus.c ft_lstsize_bonus.c
 
-$(NAME): $(OBJ)
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+OBJ = $(SRC:%.c=%.o)
 
-bonus: $(OBJ)
-		ar rcs $(NAME) $^
+OBJBONUS = $(SRCBONUS:%.c=%.o)
 
-%.o: %.c
-		$(CC) -I. -o $@ -c $? $(CFLAGS)
 all: $(NAME)
 
+%.o: %.c libft.h
+	cc $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
+	ar -rcs $@ $^
+
+bonus: $(NAME) $(OBJBONUS)
+	ar -rcs $^
+
 clean:
-		$(RM) $(OBJ)
+	rm -f $(OBJ) $(OBJBONUS)
 
 fclean: clean
-		$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean clean
+.PHONY: all bonus clean re fclean

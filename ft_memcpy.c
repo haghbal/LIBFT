@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:05:11 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/25 23:17:01 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/11/27 00:21:25 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	d = (char *)dst;
 	i = 0;
 	if (dst == NULL && src == NULL)
-		return(0);
+		return (0);
 	while (i < n / sizeof(char))
 	{
 		d[i] = s[i];

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 23:38:26 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/27 00:27:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/23 23:59:17 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/25 23:06:25 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	while (lst != NULL)
 	{
-		return (1);
+		if (f != NULL)
+			(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (0);
 }
-
-/*
-int main()
-{
-    printf("%d", ft_isalpha('0'));
-}
-*/

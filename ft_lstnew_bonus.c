@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 23:38:26 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/27 00:27:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/27 00:12:51 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/27 00:23:35 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	t_list	*obj;
+
+	obj = (t_list *)malloc(sizeof(t_list));
+	if (obj == NULL)
+		return (NULL);
+	if (content != NULL)
 	{
-		return (1);
+		obj->content = content;
+		obj->next = 0;
 	}
-	return (0);
+	else
+	{
+		obj->content = content;
+		obj->next = NULL;
+	}
+	return (obj);
 }
-
-/*
-int main()
-{
-    printf("%d", ft_isalpha('0'));
-}
-*/

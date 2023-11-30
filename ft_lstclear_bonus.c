@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 23:38:26 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/27 00:27:59 by haghbal          ###   ########.fr       */
+/*   Created: 2023/11/23 22:40:50 by haghbal           #+#    #+#             */
+/*   Updated: 2023/11/24 00:34:51 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	t_list	*actul_nd;
+	t_list	*next;
+
+	if (lst)
 	{
-		return (1);
+		actul_nd = *lst;
+		while (actul_nd != NULL)
+		{
+			next = actul_nd->next;
+			if (del != NULL)
+				del(actul_nd->content);
+			free(actul_nd);
+			actul_nd = next;
+		}
+		*lst = NULL;
 	}
-	return (0);
 }
-
-/*
-int main()
-{
-    printf("%d", ft_isalpha('0'));
-}
-*/
