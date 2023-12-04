@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:36:23 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/01 00:50:03 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 18:51:05 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	new->next = *lst;
 	*lst = new;
-}
-
-int main()
-{
-	t_list	*node;
-	t_list	**head;
-	t_list	*new = ft_lstnew("test1");
-	head = &node;
-	node = ft_lstnew("test");
-	ft_lstadd_front(head, new); 
-	while (head)
-	{
-		printf("%s", head->content);
-		head = head->next;
-	}
 }

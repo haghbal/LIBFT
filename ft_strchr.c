@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:37:51 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/25 23:01:40 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/03 17:52:53 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strchr(const char *s, int c)
 // int main() 
 // {
 //     const char *chaine = "Hello, World!";
-//     char caractere = '\0';
+//     char caractere = 'o';
 
 //     char *resultat = ft_strchr(chaine, caractere);
 //     printf("%s\n", resultat);

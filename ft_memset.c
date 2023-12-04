@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 20:04:41 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/28 16:24:38 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 14:49:44 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,42 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 	char	*a;
-	char	k;
 
 	i = 0;
-	k = (char)c;
 	a = (char *)b;
 	while (i < len)
 	{
-		a[i] = k;
+		a[i] = (unsigned char)c;
 		i++;
 	}
 	return (a);
 }
 // int main()
 // {
-//     char s[10];
-// 	int x;
-//     ft_memset(&x, 5, 2);
-// 	ft_memset(&x, 57, 1);
-//     printf("%d\n", x);
-//     // printf("%s\n",f);
-// 	  // char *f = memset(s, 'd', 5);
+//     // int a = 0;
+//     int a[] = {13, 37};
+// 	a[0] = 0;
+// 	a[1] = 0;
+// 	ft_memset(a, 5, 5);
+// 	ft_memset(a, 0, 4);
+// 	ft_memset(a, 5, 1);
+// 	// ft_memset(&a, 254, 4);
+// 	// ft_memset(&a, 23, 3);
+// 	// ft_memset(&a, 175, 2);
+// 	// ft_memset(&a, 240, 1);
+// 	printf("%d",a[1]);
+// }
+
+// int xhal fih man byte 4
+
+// int 0 = 00000000 00000000 00000000 00000000;
+// int 102215664 =   000000000 000000000 000000000 000000011 
+// 00000000 00000000 0000000 00000011;
+
+// int main()
+// {
+// 	int x = 0;
+// 	ft_memset(&x, 0b101, 2);
+// 	ft_memset(&x, 0b00111001, 1);
+// 	printf("%d",x);
 // }

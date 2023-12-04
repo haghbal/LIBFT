@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:48:09 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/23 21:34:19 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/02 16:09:45 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main()
 // {
-// 	char const *s1 = "*###bhdhsethfdhsfh*###";
+// 	char const *s1 = "*###*###";
 // 	char const *set = "*#";
 // 	printf("%s\n", ft_strtrim(s1, set));
 // }

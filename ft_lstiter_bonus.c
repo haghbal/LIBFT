@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 23:59:17 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 15:35:03 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 19:30:44 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst != 0)
+	if (lst && f)
 	{
-		if (f != NULL)
+		while (lst != 0)
+		{
 			(*f)(lst->content);
-		lst = lst->next;
+			lst = lst->next;
+		}
 	}
 }
 

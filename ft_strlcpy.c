@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:08:29 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/11 21:15:00 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/03 18:52:45 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	srclen;
-	char	*new_src;
 
 	i = 0;
-	new_src = (char *)src;
-	srclen = ft_strlen(new_src);
+	srclen = ft_strlen(src);
 	if (dstsize <= 0)
 		return (srclen * sizeof(char));
 	while (i < dstsize - 1 && src[i])
@@ -33,11 +31,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (srclen * sizeof(char));
 }
+
 // int main() 
 // {
 //     char destination[20];
-//     const char *source = "";
-//     size_t total_size = 15;
+//     const char *source = "abcdefg";
+//     size_t total_size = 5;
 
 //     size_t result = strlcpy(destination, source, total_size);
 // 	size_t rst = ft_strlcpy(destination, source, total_size);

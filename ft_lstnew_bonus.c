@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 00:12:51 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/01 00:14:19 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 17:12:09 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(void *content)
 	if (obj == NULL)
 		return (NULL);
 	obj->content = content;
-	obj->next = 0;
+	obj->next = NULL;
 	return (obj);
 }
 

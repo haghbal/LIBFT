@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:01:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/25 16:20:49 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/03 16:36:10 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*b;
+	char	*b;
 
-	i = 0;
-	b = (unsigned char *)s;
+	b = (char *)s;
 	ft_memset(b, '\0', n);
 }
+
 // int main()
 // {
 //     char k[10];

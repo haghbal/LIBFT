@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 23:13:22 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/26 23:18:07 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/02 00:09:33 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_isalnum(int c)
 /*
 int main()
 {
-	printf("%d", ft_isalnum('9));
+	printf("%d", ft_isalnum('9'));
 }
 */

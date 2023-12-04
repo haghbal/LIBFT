@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 22:40:50 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 23:15:02 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 18:50:50 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
-	
+
 	if (!lst || !del)
 		return ;
 	if (*lst)

@@ -6,33 +6,33 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:07:40 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 22:27:57 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/01 18:50:21 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *new_list;
-    t_list *current;
-    
-    if (!lst || !f || !del)
-        return (NULL);
-    new_list = NULL;
-    while (lst)
+	t_list	*new_list;
+	t_list	*current;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-       
-        current = ft_lstnew(f(lst->content));
-        if(!current)
-        {
-            ft_lstclear(&new_list, del);
-            return (NULL);
-        }
-        ft_lstadd_back(&new_list, current);
-        lst = lst->next;
-    }
-    return (new_list);
+		current = ft_lstnew(0);
+		if (!current)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		current->content = f(lst->content);
+		ft_lstadd_back(&new_list, current);
+		lst = lst->next;
+	}
+	return (new_list);
 }
 
 // void *test(void *cont)

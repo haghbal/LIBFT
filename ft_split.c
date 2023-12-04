@@ -6,17 +6,16 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 23:30:07 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/02 22:59:19 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	size_t	words;
-	size_t	i;
+	int	words;
+	int	i;
 
 	words = 0;
 	i = 0;
@@ -29,20 +28,20 @@ static size_t	count_words(char const *s, char c)
 	return (words);
 }
 
-static void	ft_saisi(char *soutab, const char *s, char c)
+static void	ft_saisi(char **tab, const char *s, char c, int index)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
 	{
-		soutab[i] = s[i];
+		tab[index][i] = s[i];
 		i++; 
 	}
-	soutab[i] = '\0';
+	tab[index][i] = '\0';
 }
 
-void	free_tab(char **tab, size_t index)
+static char	**free_tab(char **tab, int index)
 {
 	while (index >= 0)
 	{
@@ -50,14 +49,14 @@ void	free_tab(char **tab, size_t index)
 		index--;
 	}
 	free(tab);
-	return ;
+	return (0);
 }
 
-static void	aloc_soutab(char **tab, char const *s, char c)
+static char	**aloc_soutab(char **tab, char const *s, char c)
 {
-	size_t	j;
-	size_t	count;
-	size_t	i;
+	int	j;
+	int	count;
+	int	i;
 
 	j = 0;
 	i = 0;
@@ -70,8 +69,8 @@ static void	aloc_soutab(char **tab, char const *s, char c)
 		{
 			tab[i] = malloc((count + 1) * sizeof(char));
 			if (!tab[i])
-				free_tab(tab, i);
-			ft_saisi(tab[i], (s + j), c);
+				return (free_tab(tab, i));
+			ft_saisi(tab, s + j, c, i);
 			i++;
 			j = j + count;
 		}
@@ -79,11 +78,12 @@ static void	aloc_soutab(char **tab, char const *s, char c)
 			j++;
 	}
 	tab[i] = 0;
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	words;
+	int		words;
 	char	**tab;
 
 	if (s == NULL)
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 	tab = malloc((words + 1) * sizeof(char *));
 	if (!tab)
 		return (0);
-	aloc_soutab(tab, s, c);
+	tab = aloc_soutab(tab, s, c);
 	return (tab);
 }
 
