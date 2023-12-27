@@ -6,12 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:52:04 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/03 18:27:24 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 21:17:27 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -20,11 +19,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*new_str;
 
 	new_str = (char *)haystack;
-	i = 0;
 	if (*needle == '\0')
 	{
 		return (new_str);
 	}
+	if (haystack == NULL && len == 0)
+		return (NULL);
+	i = 0;
 	while (new_str[i] && (i < len))
 	{
 		j = 0;
@@ -38,12 +39,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	const char *str = "qabckiet";
-// 	const char *to_find = "abc";
-// 	size_t len = 8;
-// 	char *rslt = ft_strnstr(str, to_find, len);
-// 	char *rzlt = strnstr(str, to_find, len);
-// 	printf("dyali:%s\n dyalhom: %s", rslt, rzlt);
-// }

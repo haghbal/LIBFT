@@ -6,12 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:41:36 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/23 22:34:35 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 14:55:20 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	check_nbr(unsigned long r, int s)
 {
@@ -48,9 +47,3 @@ int	ft_atoi(const char *str)
 	}
 	return (check_nbr(r, s));
 }
-
-// int main()
-// {
-// printf("%d\n", atoi("-9223372036854775809"));
-// printf("%d", ft_atoi("-9223372036854775809"));
-// }

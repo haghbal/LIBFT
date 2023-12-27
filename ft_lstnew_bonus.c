@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 00:12:51 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/01 17:12:09 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 15:07:23 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,3 @@ t_list	*ft_lstnew(void *content)
 	obj->next = NULL;
 	return (obj);
 }
-
-// int main()
-// {
-// 	t_list	*node;
-
-// 	node = ft_lstnew("test");
-
-// 	printf("%s", node->content);
-// }

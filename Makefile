@@ -10,8 +10,8 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 SRCBONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
-ft_lstnew_bonus.c ft_lstsize_bonus.c
+ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c \
+ft_lstsize_bonus.c
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -23,10 +23,10 @@ all: $(NAME)
 	cc $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar -rcs $@ $^
+	ar -rc $@ $^
 
 bonus: $(NAME) $(OBJBONUS)
-	ar -rcs $^
+	ar -rc $^
 
 clean:
 	rm -f $(OBJ) $(OBJBONUS)
@@ -36,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean re fclean
+.PHONY: clean

@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/02 22:59:19 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:48:43 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static void	ft_saisi(char **tab, const char *s, char c, int index)
+static void	ft_saisi(char *tab, const char *s, char c)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
 	{
-		tab[index][i] = s[i];
-		i++; 
+		tab[i] = s[i];
+		i++;
 	}
-	tab[index][i] = '\0';
+	tab[i] = '\0';
 }
 
 static char	**free_tab(char **tab, int index)
@@ -60,24 +60,24 @@ static char	**aloc_soutab(char **tab, char const *s, char c)
 
 	j = 0;
 	i = 0;
-	while (s[j])
+	while (s[i])
 	{
 		count = 0;
-		while (s[j + count] != c && s[j + count] != '\0')
+		while (s[i + count] != c && s[i + count] != '\0')
 			count++;
 		if (count > 0)
 		{
-			tab[i] = malloc((count + 1) * sizeof(char));
-			if (!tab[i])
-				return (free_tab(tab, i));
-			ft_saisi(tab, s + j, c, i);
-			i++;
-			j = j + count;
+			tab[j] = malloc((count + 1) * sizeof(char));
+			if (!tab[j])
+				return (free_tab(tab, j));
+			ft_saisi(tab[j], s + i, c);
+			j++;
+			i = i + count;
 		}
 		else
-			j++;
+			i++;
 	}
-	tab[i] = 0;
+	tab[j] = 0;
 	return (tab);
 }
 
@@ -95,18 +95,15 @@ char	**ft_split(char const *s, char c)
 	tab = aloc_soutab(tab, s, c);
 	return (tab);
 }
-
-// int main()
-// {
-// 	char const *s = "hello!";
-// 	char c = ' ';
-// 	char **ss = ft_split(s, c);
-// 	int i = 0;
-// 	while (ss[i])
-// 	{
-// 		printf("%s\n", ss[i]);
-// 		i++;
-// 		free(ss[i]);
-// 	}
-// 	free(ss);
-// }
+int main()
+{
+	char s[] = "bonjour les amis comment allez vous";
+	char c = ' ';
+	
+	int i = 0;
+	while f[i]
+	{
+		
+	}
+	char ** f = ft_split(s, c);
+}

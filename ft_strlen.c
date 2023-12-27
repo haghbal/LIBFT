@@ -6,11 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:14:27 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/30 23:17:49 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/08 19:48:57 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -21,12 +21,5 @@ size_t	ft_strlen(const char *s)
 	{
 		i++;
 	}
-	return (i * sizeof(char));
+	return (i);
 }
-
-// int main()
-// {
-// 	char *str = "hamza";
-// 	printf("%d",ft_strlen(str));
-// 	return 0;
-// }

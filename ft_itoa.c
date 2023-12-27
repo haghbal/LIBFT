@@ -6,12 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 23:00:29 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/17 19:06:41 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/09 18:25:36 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count_dij(int dij)
 {
@@ -65,10 +64,3 @@ char	*ft_itoa(int n)
 	str[dij] = '\0';
 	return (str);
 }
-
-// int main() {
-
-//     printf("%s", ft_itoa(2147483648));
-
-//     return 0;
-// }

@@ -6,12 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:37:51 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/03 17:52:53 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 16:28:03 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -32,11 +31,3 @@ char	*ft_strchr(const char *s, int c)
 		return (&a[i]);
 	return (0);
 }
-// int main() 
-// {
-//     const char *chaine = "Hello, World!";
-//     char caractere = 'o';
-
-//     char *resultat = ft_strchr(chaine, caractere);
-//     printf("%s\n", resultat);
-// }

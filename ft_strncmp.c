@@ -6,11 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:29:45 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/03 18:34:10 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:48:23 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -29,13 +29,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	const char *s2 = "test\0";
-// 	const char *s1 = "test\200";
-// 	size_t n = 6;
-// 	int a = ft_strncmp(s1, s2, n);
-// 	int	b = strncmp(s1, s2, n);
-// 	printf("dyali: %d\n dyalhom %d", a, b);
-// }

@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 22:44:38 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/04 14:46:15 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/04 18:36:18 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*s;
-	char	*ss;
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*ss;
 
-	s = (char *)s1;
-	ss = (char *)s2;
+	s = (unsigned char *)s1;
+	ss = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{
@@ -29,12 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-// 	const char *s2 = "abcd";
-// 	const char *s1 = "abcdr";
-// 	size_t n = 5;
-// 	int a = ft_memcmp(s1, s2, n);
-// 	int	b = memcmp(s1, s2, n);
-// 	printf("dyali: %d\n dyalhom %d", a, b);
-// }

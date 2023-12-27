@@ -6,12 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:08:24 by haghbal           #+#    #+#             */
-/*   Updated: 2023/11/17 23:39:45 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/10 00:54:09 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -30,17 +29,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < len)
 	{
-		str[i] = (*f)((unsigned int)i, s[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
 	return (str);
 }
-
-// int main()
-// {
-// 	const char *str = "abc";
-// 	char *result = ft_strmapi(str, &my_function);
-// 	printf("%s\n", result);
-// 	free(result);
-// }
