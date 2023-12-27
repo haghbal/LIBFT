@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 15:41:26 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/22 17:29:04 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/27 18:53:41 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-int main()
-{
-int fd = open("test.c", O_RDWR, 777 );
-	if (fd == -1)
-	return (0);
-ft_putchar_fd('a', fd);
-}
+// int main()
+// {
+// int fd = open("test.c", O_RDWR, 777 );
+// 	if (fd == -1)
+// 	return (0);
+// ft_putchar_fd('a', fd);
+// }

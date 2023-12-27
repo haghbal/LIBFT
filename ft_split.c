@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2023/12/22 17:48:43 by haghbal          ###   ########.fr       */
+/*   Updated: 2023/12/27 18:53:19 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,15 @@ char	**ft_split(char const *s, char c)
 	tab = aloc_soutab(tab, s, c);
 	return (tab);
 }
-int main()
-{
-	char s[] = "bonjour les amis comment allez vous";
-	char c = ' ';
+// int main()
+// {
+// 	char s[] = "bonjour les amis comment allez vous";
+// 	char c = ' ';
 	
-	int i = 0;
-	while f[i]
-	{
+// 	int i = 0;
+// 	while f[i]
+// 	{
 		
-	}
-	char ** f = ft_split(s, c);
-}
+// 	}
+// 	char ** f = ft_split(s, c);
+// }
